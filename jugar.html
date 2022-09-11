@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <title>Juego del ahorcado 🕹️ 🧟‍♀️</title>
-
 </head>
 <body>
-    <header> 
-        <button class="btn" > <a href="https://www.aluracursos.com/" target="_blank">
-        <img src="imagenes/logo.png" alt=""></a></button>
-    </header>
-
-<div class="botonesInicio">
-    <button class="boton" onclick="location.href='Jugar.html'"> Jugar</button>
-        <button class="boton1" onclick="location.href='agregar.html'"> Agregar Palabra</button>
-
+    
+<div class="area">
+    <canvas id="canvas" width="900" height="700"></canvas>
+ 
 </div>
+<div class=" botones">
+    <button class="boton" onclick=sortearPalabra()> Nuevo Juego</button>
+    <button class="boton1" onclick="location.href='index.html'"> Volver</button>
+</div>
+
 
 <footer> 
     <div class="footer-bottom">
         <p>copyright &copy;2022 <a href="https://frontendnf.web.app/portfolio" target="_blank">Natalia Fuoco</a>  </p>
-
     </div>
 </footer>
 

@@ -1,10 +1,12 @@
 var pantalla = document.querySelector("canvas"); 
+
 var pincel = pantalla.getContext("2d"); 
 
-let fondo = "#a99cb4";
+
+let fondo = "#414142";
 let linea = "#8a2be2";
 let px = 350;
-let py = 200;
+let py = 150;
 pincel.fillStyle = fondo; 
 pincel.fillRect(0, 0, 1200, 800);
 pincel.strokeStyle =  linea;
@@ -123,13 +125,39 @@ function dibujarAhorcado(){
     pincel.stroke();
 }
 
-dibujarHorca();
-dibujarCabeza();
-dibujarCuello();
-dibujarBrazoD();
-dibujarBrazoI();
-dibujarCuerpo();
-dibujarPiernaD();
-dibujarPiernaI();
-dibujarAhorcado();
+ dibujarHorca();
+ dibujarCabeza();
+ dibujarCuello();
+ dibujarBrazoD();
+ dibujarBrazoI();
+ dibujarCuerpo();
+ dibujarPiernaD();
+ dibujarPiernaI();
+ dibujarAhorcado();
 
+
+ / Array de palabras
+
+
+
+
+
+//  let palabras =["manzana", "frutas", "cuarzo", "monitor"];
+//  let rand = Math.floor(Math.random()*palabras.length);
+//  let rPalabra = palabras[rand];
+
+//  function sortearPalabra(){
+//    console.log(rPalabra);
+    
+//  }
+//  let nuevaPalabra= document.getElementById("nuevaPalabra")
+//  function agregarPalabra(nuevaPalabra) {
+//     palabras.push(nuevaPalabra)
+//  }
+
+//  function mostrarArray(){
+//     for (let i = 0; i < palabras.length; i++) {
+//       console.log(palabras[i]);
+//          }   
+ 
+// }
