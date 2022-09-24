@@ -9,14 +9,17 @@
     <title>Juego del ahorcado 🕹️ 🧟‍♀️</title>
 </head>
 <body>
-    
+    <button class="boton1" onclick="location.href='index.html'"> Volver</button>
 <div class="area">
-    <canvas id="canvas" width="900" height="700"></canvas>
+    <canvas id="canvas" width="1200" height="860"></canvas>
  
 </div>
+<div class="area"> <h3 class="texto"  id="word"><span id="total"></span></h3> </div> 
+<!-- el div anterior lo saco cuando pueda meter las rayas -->
+
 <div class=" botones">
-    <button class="boton" onclick=sortearPalabra()> Nuevo Juego</button>
-    <button class="boton1" onclick="location.href='index.html'"> Volver</button>
+    <button class="boton" onclick=iniciarJuego() value="iniciar_juego" id="nuevo_juego" > Nuevo Juego</button>
+    
 </div>
 
 

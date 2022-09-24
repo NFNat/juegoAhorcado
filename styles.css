@@ -60,7 +60,7 @@ button {
    }
 
    .boton{
-       padding: 1em 5.5em;
+        padding: 1em 5.5em;
    
       }
    .boton1{
@@ -89,8 +89,10 @@ button {
        align-content: center;
        align-items: center;
  }
+
+
  .botones{
-       margin-top: 10px;
+       margin-top: -250px;
        margin-bottom: 80px;
 
 
@@ -131,4 +133,17 @@ button {
    .footer-bottom a:hover{
        
        color: #b417b9;
+    }
+
+
+    .texto {
+     color: #b417b9;
+     background-color: #e7ceff;
+     border-radius: 20px;
+     width: 20%;
+     font-size: 2em;
+     display: flex;
+      justify-content: center;
+       align-content: center;
+       align-items: center;
     }

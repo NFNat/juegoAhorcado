@@ -18,9 +18,10 @@ function dibujarHorca() {
     pincel.fillRect(px-90,py-50,90,6);   
     pincel.fillRect(px-3,py-50,6,20);   
     pincel.fillRect(px-120,py+300,65,26);   
-    pincel.fillRect(px-150,py+326,126,36);   
-        
+    pincel.fillRect(px-150,py+326,126,36);       
 }
+ 
+
 
 function dibujarContorno(){
     pincel.beginPath();
@@ -125,39 +126,97 @@ function dibujarAhorcado(){
     pincel.stroke();
 }
 
- dibujarHorca();
- dibujarCabeza();
- dibujarCuello();
- dibujarBrazoD();
- dibujarBrazoI();
- dibujarCuerpo();
- dibujarPiernaD();
- dibujarPiernaI();
- dibujarAhorcado();
 
-
- / Array de palabras
+ function iniciarJuego(){
+    document.getElementById("nuevo_juego").style.display ="none";
+    sortearPalabra();
+ }
 
 
 
+ function sortearPalabra(){    
+    fetch('/data.json')
+    .then(response => response.json())
+    .then(data => {
+
+        let palabraSecreta = data.palabras[Math.floor(Math.random()*data.palabras.length )]
+
+        document.getElementById('word').innerHTML = `${palabraSecreta}`
+
+       pincel.lineWidth = 6;
+        pincel.lineCap ="round";
+        pincel.lineJoin ="round";
+        pincel.strokeStyle = linea;
+        let ancho = 600/(palabraSecreta.length);
+        for (let i = 0; i < palabraSecreta.length; i++) {
+            pincel.moveTo(px+20 + (ancho*i),py+400);
+            pincel.lineTo(px+70 + (ancho*i),py+400);
+        }
+        pincel.stroke();
+        pincel.closePath(); 
+        
+
+    })
+ }
 
 
-//  let palabras =["manzana", "frutas", "cuarzo", "monitor"];
-//  let rand = Math.floor(Math.random()*palabras.length);
-//  let rPalabra = palabras[rand];
 
-//  function sortearPalabra(){
-//    console.log(rPalabra);
+
+ 
+
+
+
+
+//  function dibujarLinea(){
+//     pincel.lineWidth = 8;
+//     pincel.lineCap ="round";
+//     pincel.lineJoin ="round";
+//     //pincel.fillStyle = "red";
+//     pincel.strokeStyle = linea;
+
+//     pincel.beginPath();
+//     pincel.moveTo(px+20, py+400);
+//     pincel.lineTo(px+70, py+400);
+//     pincel.stroke();
+//     pincel.closePath();
+    
+// }
+
+
+// function  dibujarLineas(){  
+     
+//     console.log(document.getElementById("word").inputValue);
+   
+            
+
+    
+        
     
 //  }
-//  let nuevaPalabra= document.getElementById("nuevaPalabra")
-//  function agregarPalabra(nuevaPalabra) {
-//     palabras.push(nuevaPalabra)
-//  }
 
-//  function mostrarArray(){
-//     for (let i = 0; i < palabras.length; i++) {
-//       console.log(palabras[i]);
-//          }   
+
+
  
-// }
+function getValueInput() {
+    let inputValue = document.getElementById("insertarPalabra").value;
+    console.log(inputValue); 
+   
+     
+  }
+ 
+
+
+
+  dibujarHorca();
+  //dibujarLinea();
+  
+  
+  dibujarCabeza();
+  dibujarCuello();
+  dibujarBrazoD();
+  dibujarBrazoI();
+  dibujarCuerpo();
+  dibujarPiernaD();
+  dibujarPiernaI();
+  dibujarAhorcado();
+ 
