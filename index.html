@@ -13,13 +13,50 @@
     <header> 
         <button class="btn" > <a href="https://www.aluracursos.com/" target="_blank">
         <img src="imagenes/logo.png" alt=""></a></button>
+        <div class="pista">
+            <p  id="pista">
+            </p>
+        </div>
+
+
     </header>
 
+    
+    <div class="area">
+        <canvas id="canvas" width="1200" height="860"></canvas>
+    </div>
+
+  
+
+    <div class=" botones">
+        <button class="boton" onclick=iniciarJuego() value="iniciar_juego" id="nuevo_juego" > Nuevo Juego</button>
+        
+    </div>
+
+<div class="botones2">
+        <button class="boton1" onclick="location.href='index.html'"> Reiniciar</button>
+        <button class="boton1" onclick=pista()> Dame una pista</button>
+
+        <!-- <form action="">
+            <label for="insertarPalabra">Nueva</label>
+            <input type="text" id="insertarPalabra">
+    
+            <button type="submit" class="boton" onclick=getValueInput() > Guardar y Empezar</button>
+    
+        </form> -->
+
+</div>
+
+
+
+<!-- 
 <div class="botonesInicio">
     <button class="boton" onclick="location.href='Jugar.html'"> Jugar</button>
         <button class="boton1" onclick="location.href='agregar.html'"> Agregar Palabra</button>
+</div> -->
 
-</div>
+
+
 
 <footer> 
     <div class="footer-bottom">

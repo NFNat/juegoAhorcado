@@ -1,149 +1,172 @@
-body{
-    background-color: #2d2d2e;
-}
-header{
-       margin: 20px;
+body {
+      background-color: #2d2d2e;
 }
 
-.btn{
-       padding: 0.5em;   
+header {
+      margin: 20px;
+}
+
+.btn {
+      padding: 0.5em;
 }
 
 button {
-    --glow-color: rgb(217, 176, 255);
-    --glow-spread-color: rgba(191, 123, 255, 0.781);
-    --enhanced-glow-color: #e7ceff;
-    --btn-color: #643d88;
-    border: .25em solid var(--glow-color);
-    padding: 1em 3em;
-    color: var(--glow-color);
-    font-size: 15px;
-    font-weight: bold;
-    background-color: var(--btn-color);
-    border-radius: 1em;
-    outline: none;
-    box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 1em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
-    text-shadow: 0 0 .5em var(--glow-color);
-    position: relative;
-    transition: all 0.3s;
-    cursor: pointer;
-   }
-   
-   button::after {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    top: 120%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--glow-spread-color);
-    filter: blur(2em);
-    opacity: .7;
-    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
-   }
-   
-   button:hover {
-    color: var(--btn-color);
-    background-color: var(--glow-color);
-    box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 2em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
-   }
-   
-   button:active {
-    box-shadow: 0 0 0.6em .25em var(--glow-color),
-           0 0 2.5em 2em var(--glow-spread-color),
-           inset 0 0 .5em .25em var(--glow-color);
-   }
+      --glow-color: rgb(217, 176, 255);
+      --glow-spread-color: rgba(191, 123, 255, 0.781);
+      --enhanced-glow-color: #e7ceff;
+      --btn-color: #643d88;
+      border: .25em solid var(--glow-color);
+      padding: 1em 3em;
+      color: var(--glow-color);
+      font-size: 15px;
+      font-weight: bold;
+      background-color: var(--btn-color);
+      border-radius: 1em;
+      outline: none;
+      box-shadow: 0 0 1em .25em var(--glow-color),
+            0 0 4em 1em var(--glow-spread-color),
+            inset 0 0 .75em .25em var(--glow-color);
+      text-shadow: 0 0 .5em var(--glow-color);
+      position: relative;
+      transition: all 0.3s;
+      cursor: pointer;
+}
 
-   .boton{
-        padding: 1em 5.5em;
-   
-      }
-   .boton1{
-    --btn-color: #b417b9;
+button::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--glow-spread-color);
+      filter: blur(2em);
+      opacity: .7;
+      transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
 
-   }
+button:hover {
+      color: var(--btn-color);
+      background-color: var(--glow-color);
+      box-shadow: 0 0 1em .25em var(--glow-color),
+            0 0 4em 2em var(--glow-spread-color),
+            inset 0 0 .75em .25em var(--glow-color);
+}
 
-   
- .botonesInicio{
-       height: 50vmin;
-       border-radius: 30px;
-       display: flex;
-       flex-direction: column;
-       flex-wrap: wrap;
-       justify-content: center;
-       align-content: center;
-       align-items: center;
- }
- 
- .area, .botones{
-       border-radius: 30px;
-       display: flex;
-       flex-direction: row;
-       flex-wrap: wrap;
-       justify-content: center;
-       align-content: center;
-       align-items: center;
- }
+button:active {
+      box-shadow: 0 0 0.6em .25em var(--glow-color),
+            0 0 2.5em 2em var(--glow-spread-color),
+            inset 0 0 .5em .25em var(--glow-color);
+}
+
+.boton {
+      padding: 1em 5.5em;
+
+}
+
+.boton1 {
+      --btn-color: #b417b9;
+
+}
 
 
- .botones{
-       margin-top: -250px;
-       margin-bottom: 80px;
+.botonesInicio {
+      height: 50vmin;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+}
+
+.area,
+.botones {
+      border-radius: 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+}
 
 
- }
- canvas{
-       border-radius: 20px;
+.botones {
+      margin-top: -250px;
+      margin-bottom: 80px;
+}
+
+.botones2 {
+      border-radius: 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+}
+
+canvas {
+      border-radius: 20px;
+
+}
+
+.boton,
+.boton1 {
+      margin: 20px
+}
+
+footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: auto;
+      width: 100vw;
+      padding-top: 40px;
+
+
+}
+.pista{
+      color: #b417b9;
+      font-size: 2em;
+      text-align: center;
       
- }
- .boton, .boton1{
-       margin: 20px
- }
-
- footer{
-       position: fixed;
-       bottom: 0;
-       left: 0;
-       right: 0;   
-       height: auto;
-       width: 100vw;
-       padding-top: 40px;
-       
       
-   }
-   .footer-bottom{
-       background: #643d88;
-       color: #daf2f2;
-       width: 100vw;
-       padding: 20px;
-       padding-bottom: 15px;
-       text-align: center;
-       
-   }
-   
-   .footer-bottom a{
+}
+
+.footer-bottom {
+      background: #643d88;
+      color: #daf2f2;
+      width: 100vw;
+      padding: 20px;
+      padding-bottom: 15px;
+      text-align: center;
+
+}
+
+.footer-bottom a {
       text-decoration: none;
       color: #daf2f2;
-   }
-   .footer-bottom a:hover{
-       
-       color: #b417b9;
-    }
+}
+
+.footer-bottom a:hover {
+
+      color: #b417b9;
+}
 
 
-    .texto {
-     color: #b417b9;
-     background-color: #e7ceff;
-     border-radius: 20px;
-     width: 20%;
-     font-size: 2em;
-     display: flex;
+.texto {
+      color: #b417b9;
+      background-color: #e7ceff;
+      border-radius: 20px;
+      width: 20%;
+      font-size: 2em;
+      display: flex;
       justify-content: center;
-       align-content: center;
-       align-items: center;
-    }
+      align-content: center;
+      align-items: center;
+}
