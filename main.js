@@ -123,9 +123,48 @@ function dibujarAhorcado() {
 let palabras = ["MANZANA", "FRUTAS", "CUARZO", "MONITOR", "PERAS", "FUTURO"];
 let palabraSecreta = "";
 let letras = [];
+let letrasCorrectas=0;
 let errores = 8;
-let palabra
+let palabra;
+let letrasIncorrectas = [];
+let found;
 
+function continuarJuego() {
+  if (errores <= 0 ) {
+    alert("Ya perdiste!! Bueno, seguí intentando por el honor '&#128540'");    
+  }
+
+}
+
+function pista() {
+  switch (palabraSecreta) {
+    case "MANZANA":
+      document.getElementById("pista").innerHTML = "Puede ser roja o verde";
+      break;
+    case "FRUTAS":
+      document.getElementById("pista").innerHTML = "Son muy saludables";
+      break;
+    case "CUARZO":
+      document.getElementById("pista").innerHTML =
+        "Es un mineral, el segundo mas abundante en la corteza terrestre";
+      break;
+    case "MONITOR":
+      document.getElementById("pista").innerHTML =
+        "Es altamente probable que estes mirando uno ahora mismo";
+      break;
+    case "PERAS":
+      document.getElementById("pista").innerHTML = "Son amarillas y deliciosas";
+      break;
+    case "FUTURO":
+      document.getElementById("pista").innerHTML =
+        "Segun una canciòn, llegò hace rato";
+      break;
+
+    default:
+      console.log("opcion no valida");
+      break;
+  }
+}
 
 
 function armarhorca(errores){
@@ -201,6 +240,23 @@ function armarhorca(errores){
 }
 
 function sortearPalabra() {
+// if (estado) {
+//   palabraSecreta=nuevaPalabra;
+
+//   pincel.lineWidth = 4;
+//   pincel.lineCap = "round";
+//   pincel.lineJoin = "round";
+//   pincel.strokeStyle = linea;
+//   let ancho = 600 / palabraSecreta.length;
+//   for (let i = 0; i < palabraSecreta.length; i++) {
+//     pincel.moveTo(px + 20 + ancho * i, py + 400);
+//     pincel.lineTo(px + 70 + ancho * i, py + 400);
+//   }
+//   pincel.stroke();
+//   pincel.closePath();
+//   console.log(palabraSecreta); // borrar esta linea cuando se termine el programa
+// } else {
+  
   let palabra = palabras[Math.floor(Math.random() * palabras.length)];
   palabraSecreta = palabra;
 
@@ -218,6 +274,8 @@ function sortearPalabra() {
   console.log(palabraSecreta); // borrar esta linea cuando se termine el programa
 }
 
+// }
+
 function escribirLetraCorrecta(index) {
   pincel.font = "bold 52px Inter";
   pincel.lineWidth = 6;
@@ -227,104 +285,107 @@ function escribirLetraCorrecta(index) {
 
   let ancho = 600 / palabraSecreta.length;
   pincel.fillText(palabraSecreta[index], px + 25 + ancho * index, py + 380);
+
+
+  letrasCorrectas = letrasCorrectas +1;    
+    console.log(letrasCorrectas);//sacar esto
+  
+    if (letrasCorrectas === palabraSecreta.length) {
+      alert ("Ganaste");      
+    } else {
+      //console.log("Seguir Jugando");
+    } 
+    continuarJuego()
 }
 
 function escribirLetraIncorrecta(letra, errorLeft) {
-  pincel.font = "bold 40px Inter";
-  pincel.lineWidth = 6;
-  pincel.lineCap = "round";
-  pincel.lineJoin = "round";
-  pincel.fillStyle = "#8a2be2";
-  pincel.fillText(letra, px + 30 + 40 * (10 - errorLeft), py + 500, 40);
+  
+    pincel.font = "bold 40px Inter";
+    pincel.lineWidth = 6;
+    pincel.lineCap = "round";
+    pincel.lineJoin = "round";
+    pincel.fillStyle = "#8a2be2";
+    pincel.fillText(letra, px + 30 + 40 * (10 - errorLeft), py + 500, 40);
+    
+  
 }
 
 function comprobarLetra(key) {
   let status = false;
-  if (
-    (key >= 65 && letras.indexOf(key)) ||
-    (key <= 90 && letras.indexOf(key))
-  ) {
+  if ((key >= 65 && letras.indexOf(key)) || (key <= 90 && letras.indexOf(key))) {
     //// 65 y 90 corresponde al numero en el indice ASCII de las letras mayusculas
     letras.push(key);
-    console.log(key);
+    
+    //console.log(key);//sacar esto
     return status;
   } else status = true;
   console.log(key);
   return status;
 }
 
-function agregarLetraIncorrecta() {
-  errores -=1;
+function agregarLetraIncorrecta(key) {
+  errores -= 1;
   console.log(errores);
+
+  if (errores > 0) {
+    if (!letrasIncorrectas.includes(key)) {
+      letrasIncorrectas.push(key);
+    } else {
+      alert("esa letra ya se agregó");
+      console.log(letrasIncorrectas); ///// sacar esto
+    }
+  } else {
+    alert("Perdiste");
+  }
 }
+
+
+
 
 function iniciarJuego() {
   document.getElementById("nuevo_juego").style.display = "none";
   dibujarTablero();
   sortearPalabra();
+  
 
   document.onkeydown = (e) => {
     let letra = e.key.toUpperCase();
     if(comprobarLetra(letra) && palabraSecreta.includes(letra)){
         for (let i = 0; i < palabraSecreta.length; i++) {
             if (palabraSecreta[i] === letra) {
-                escribirLetraCorrecta(i)
+                escribirLetraCorrecta(i) ;                
             }
-            
         }
-    }else{
+    }else if(!letrasIncorrectas.includes(letra)){
         agregarLetraIncorrecta(letra);
         escribirLetraIncorrecta(letra, errores);
         armarhorca(errores);
-    }    
-  };
-}
-
-////////////////////////////////////////////////////////////////////////
-/////////// a implementar cuando quede todo funcionando ///////////////
-
-function pista() {
-    switch (palabraSecreta) {
-
-        case 'MANZANA' :
-            document.getElementById("pista").innerHTML = "Puede ser roja o verde";
-        break;
-        case 'FRUTAS':
-          
-            document.getElementById("pista").innerHTML = "Son muy saludables";
-        break;
-        case 'CUARZO':
-            document.getElementById("pista").innerHTML = "Es un mineral, el segundo mas abundante en la corteza terrestre";
-
-        break;
-        case 'MONITOR':
-            document.getElementById("pista").innerHTML = "Es altamente probable que estes mirando uno ahora mismo";
-          
-        break;
-        case 'PERAS':
-            document.getElementById("pista").innerHTML = "Son amarillas y deliciosas";
-
-        break;
-        case 'FUTURO':
-            document.getElementById("pista").innerHTML = "Segun una canciòn, llegò hace rato";
-
-        break;
-          
-        default:
-            console.log("opcion no valida");
-            break;
+        }else{
+        alert("Ya se agregó esa letra");
+      }      
     }
     
-  
-}
 
-function getValueInput() {
-  let inputValue = document.getElementById("insertarPalabra").value;
-  palabras.push(inputValue)
+  };
+
+
+
+/////////// a implementar cuando quede todo funcionando ///////////////
+
+let estado = false;
+let nuevaPalabra;
+let inputValue = document.getElementById("input");
+
+input.onclick = function getValueInput() {
+  nuevaPalabra = prompt("Ingresar Palabra");
+  //inputValue = document.getElementById("insertarPalabra").value;
+  palabras.push(nuevaPalabra.toUpperCase());
+  estado = true;
   console.log(palabras);
-}
+  console.log(nuevaPalabra);
+};
 
-////////////////////////////////////////////////////////////////////////
+
 ////////Para traer la palabra desde el Json /////////////////////
 /////////////////////////////////////////////////////////////////////
 
