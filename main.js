@@ -120,7 +120,7 @@ function dibujarAhorcado() {
 
 //////// Funciones de logica
 
-let palabras = ["MANZANA", "FRUTAS", "CUARZO", "MONITOR", "PERAS", "FUTURO"];
+let palabras = ["ARBOL", "GIRASOL", "CUARZO", "EUCALIPTO", "HOJAS", "MURCIELAGO", "PATO", "MARIPOSAS","TAMBOR", "GUITARRA","CALESITA","OLAF","VIENTO","JIRAFA","SOMBRA","ALADDIN"];
 let palabraSecreta = "";
 let letras = [];
 let letrasCorrectas=0;
@@ -140,27 +140,70 @@ const jsConfetti = new JSConfetti()
 
 function pista() {
   switch (palabraSecreta) {
-    case "MANZANA":
-      document.getElementById("pista").innerHTML = "Puede ser roja o verde";
+    case "ARBOL":
+      document.getElementById("pista").innerHTML = "En primavera te deleito, en verano te refresco, en otoño te alimento, y en invierno te caliento.";
       break;
-    case "FRUTAS":
-      document.getElementById("pista").innerHTML = "Son muy saludables";
+    case "GIRASOL":
+      document.getElementById("pista").innerHTML = "Entre col y col lechuga, entre lechuga, una flor, que al sol siempre está mirando, dorándose a su calor.";
       break;
     case "CUARZO":
       document.getElementById("pista").innerHTML =
         "Es un mineral, el segundo mas abundante en la corteza terrestre";
       break;
-    case "MONITOR":
+    case "EUCALIPTO":
       document.getElementById("pista").innerHTML =
-        "Es altamente probable que estes mirando uno ahora mismo";
+        "¿Cuál es el árbol que tiene las 5 vocales?";
       break;
-    case "PERAS":
-      document.getElementById("pista").innerHTML = "Son amarillas y deliciosas";
+    case "HOJAS":
+      document.getElementById("pista").innerHTML = "Están en la navaja y en el cuaderno, se cae del árbol antes del invierno.";
       break;
-    case "FUTURO":
-      document.getElementById("pista").innerHTML =
-        "Segun una canciòn, llegò hace rato";
+    case "MURCIELAGO":
+      document.getElementById("pista").innerHTML = "Vuelo de noche, duermo de día y nunca verás plumas en ala mía.";
       break;
+    case "PATO":
+        document.getElementById("pista").innerHTML = "¿Cuál es el animal que come con las patas?";
+        break;
+    case "MARIPOSAS":
+        document.getElementById("pista").innerHTML = "Alas de mil colores y se pierden entre las flores.";
+        break;    
+    
+    case "TAMBOR":
+        document.getElementById("pista").innerHTML = "Mis caras redondas, ¡qué estiradas son! A fuerza de golpes, así canto yo.";
+        break;    
+    
+    case "GUITARRA":
+        document.getElementById("pista").innerHTML = "Soy un instrumento musical al que le gustan las cosquillas. Al rascar mi barriga, hago bellas melodías.";
+        break;    
+    
+    case "CALESITA":
+        document.getElementById("pista").innerHTML = "Vas en un aviòn, delante tienes un caballo y detràs un camion.";
+        break;    
+    
+    case "PIRATA":
+        document.getElementById("pista").innerHTML = "Llevo un parche en el ojo, Una pata de palo y mi cara es de malo, malo.";
+        break;    
+    
+    case "OLAF":
+        document.getElementById("pista").innerHTML = "Con la nieve se hace y el sol lo deshace";
+        break;    
+
+    case "VIENTO":
+        document.getElementById("pista").innerHTML = " ¿Qué cosa es? ¿Qué cosa es? Que corre mucho y no tiene pies.";
+        break;
+
+    case "JIRAFA":
+        document.getElementById("pista").innerHTML = " Alta como un palo, cabeza arriba y solo come hojas que están encima. ¿Qué es?";
+        break;
+
+    case "SOMBRA":
+        document.getElementById("pista").innerHTML = " Cuando me siento me estiro, cuando me levanto encojo, entro en el fuego y no me quemo,  entro en el agua y no me mojo.";
+        break;
+
+    case "ALADDIN":
+        document.getElementById("pista").innerHTML = " Andando por el desierto una lámpara encontró, intentó sacarle brillo y un genio apareció. ";
+        break;
+       
+    
 
     default:
       console.log("opcion no valida");
