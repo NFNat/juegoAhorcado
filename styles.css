@@ -94,6 +94,9 @@ button:active {
       align-content: center;
       align-items: center;
 }
+.area{
+      margin-top: -90px;
+}
 
 
 .botones {
@@ -140,6 +143,14 @@ footer {
       color: #b417b9;
       font-size: 2em;
       text-align: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      margin-top: -50px;
+      margin-bottom: 10px;
+      
       
       
 }
