@@ -14,37 +14,37 @@
 
 <body>
     <header>
-        <button class="btn"> <a href="https://www.aluracursos.com/" target="_blank">
-                <img src="imagenes/logo.png" alt=""></a></button>
+        <a href="https://www.aluracursos.com/" target="_blank">
+            <img class=" btn" src="imagenes/logo.png" alt=""></a>    
         <div class="pista">
             <p id="pista">
             </p>
         </div>
-
     </header>
-    <div class=" botones">
-        <button class="boton" onclick=iniciarJuego() value="iniciar_juego" id="nuevo_juego"> Nuevo Juego</button>
 
-    </div>
-    <div class="nuevaP" id="nuevaPalabra">
-        <textarea class="newWord" placeholder="ingresar solo letras MAYUSCULAS" cols="30" rows="3"></textarea>
-        <p>
-        </p>
-        <button class="boton" id="input" onclick=nuevaPalabra()> Agregar Palabra y Jugar</button>
-    </div>
-    <div class="area">
-        <canvas id="canvas" width="1200" height="860"></canvas>
-    </div>
-    <div class="botones2">
-        <button class="boton1" id="btnR" onclick="location.href='index.html'"> Reiniciar</button>
-        <button class="boton1" id="btnP" onclick=pista()> Dame una pista</button>
+    <main>
+        <div class=" botones">
+            <button class="boton" onclick=iniciarJuego() value="iniciar_juego" id="nuevo_juego"> Nuevo Juego</button>
+        </div>
+        <div class="nuevaP" id="nuevaPalabra">
+            <textarea class="newWord" placeholder="ingresar solo letras MAYUSCULAS" cols="30" rows="3"></textarea>
+            <p>
+            </p>
+            <button class="boton" id="input" onclick=nuevaPalabra()> Agregar Palabra y Jugar</button>
+        </div>
+        <div class="area">
+            <canvas id="canvas" width="1200" height="860"></canvas>
+        </div>
+        <div class="botones2">
+            <button class="boton1" id="btnR" onclick="location.href='index.html'"> Reiniciar</button>
+            <button class="boton1" id="btnP" onclick=pista()> Dame una pista</button>
+        </div>
+    </main>
 
-    </div>
     <footer>
         <div class="footer-bottom">
             <p>copyright &copy;2022 <a href="https://frontendnf.web.app/portfolio" target="_blank">Natalia Fuoco</a>
             </p>
-
         </div>
     </footer>
 

@@ -319,7 +319,6 @@ function pushLetraCorrecta(letra){
   if (!letrasCorrectasArray.includes(letra)) {
     letrasCorrectasArray.push(letra); 
   }  
- 
   }
 
 function escribirLetraCorrecta(index) {
@@ -337,9 +336,8 @@ function escribirLetraCorrecta(index) {
     if (letrasCorrectas === palabraSecreta.length) {
        win()
       jsConfetti.addConfetti() 
-      
     } 
-   // continuarJuego()
+  
 }
 
 function escribirLetraIncorrecta(letra, errorLeft) {
@@ -376,12 +374,8 @@ function lose() {
 
 }
 
-
-
 function agregarLetraIncorrecta(key) {
   errores -= 1;
-  console.log(errores);
-
   if (errores > 0) {
     if (!letrasIncorrectas.includes(key)) {
       letrasIncorrectas.push(key);
@@ -392,8 +386,6 @@ function agregarLetraIncorrecta(key) {
     lose() 
   }
 }
-
-
 
 function iniciarJuego() {
   document.getElementById("nuevo_juego").style.display = "none";
@@ -428,8 +420,6 @@ function iniciarJuego() {
     }
   };
 }
-
-
  
 function nuevaPalabra(){
 let nuevaPalabra = document.querySelector(".newWord").value;

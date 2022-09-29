@@ -6,8 +6,20 @@ header {
       margin: 20px;
 }
 
-.btn {
-      padding: 0.5em;
+.btn{
+      --glow-color: rgb(217, 176, 255);
+      --glow-spread-color: rgba(191, 123, 255, 0.781);
+      --enhanced-glow-color: #e7ceff;
+            padding: 0.5em; 
+      color: var(--glow-color);
+      background-color: var(--glow-spread-color);
+      border-radius: 1em;
+      outline: none;
+      box-shadow: 0 0 1em .25em var(--glow-color),
+            0 0 4em 1em var(--glow-spread-color),
+            inset 0 0 .75em .25em var(--glow-color);
+      cursor: pointer;
+      width: 7%;
 }
 
 button {
@@ -72,7 +84,6 @@ button:active {
 
 }
 
-
 .botonesInicio {
       height: 50vmin;
       border-radius: 30px;
@@ -97,14 +108,14 @@ button:active {
 .area{
       margin-top: -90px;
 }
-
+#canvas{
+      max-width: 50%;
+      max-height: 70%;
+}
 
 .botones {
       margin-top: 100px;
-      /* margin-bottom: 300px; */
-      
 }
-
 .botones2 {
       border-radius: 30px;
       display: flex;
@@ -112,20 +123,15 @@ button:active {
       flex-wrap: wrap;
       justify-content: center;
       align-content: center;
-      /* align-items: baseline; */
-      margin-top: -200px;
-      
-
+      margin-top: -90px;
 }
-
 canvas {
       border-radius: 20px;
-
 }
 
 .boton,
 .boton1 {
-      margin: 20px
+      margin: 20px;      
 }
 
 footer {
@@ -136,12 +142,10 @@ footer {
       height: auto;
       width: 100vw;
       padding-top: 40px;
-
-
 }
 .pista{
       color: #b417b9;
-      font-size: 2em;
+      font-size: 1.5em;
       text-align: center;
       display: flex;
       flex-direction: row;
@@ -150,11 +154,8 @@ footer {
       align-content: center;
       margin-top: -50px;
       margin-bottom: 10px;
-      
-      
-      
+      margin-left: 10%;       
 }
-
 .nuevaP{
       color: #b417b9;
       font-size: 1em;
@@ -171,7 +172,6 @@ footer {
       padding: 20px;
       padding-bottom: 15px;
       text-align: center;
-
 }
 
 .footer-bottom a {
@@ -180,11 +180,8 @@ footer {
 }
 
 .footer-bottom a:hover {
-
       color: #b417b9;
 }
-
-
 .texto {
       color: #b417b9;
       background-color: #e7ceff;
