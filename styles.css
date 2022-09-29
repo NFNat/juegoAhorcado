@@ -97,7 +97,7 @@ button:active {
 
 
 .botones {
-      margin-top: -600px;
+      margin-top: 100px;
       /* margin-bottom: 300px; */
       
 }
@@ -110,7 +110,7 @@ button:active {
       justify-content: center;
       align-content: center;
       /* align-items: baseline; */
-      margin-top: 400px;
+      margin-top: -200px;
       
 
 }

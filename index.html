@@ -21,6 +21,18 @@
 
 
     </header>
+    <div class=" botones">
+        <button class="boton" onclick=iniciarJuego() value="iniciar_juego" id="nuevo_juego" > Nuevo Juego</button>
+       
+    </div>
+    <div class="nuevaP" id="nuevaPalabra">
+        <textarea class="newWord" placeholder="ingresar solo letras MAYUSCULAS" cols="30" rows="3"></textarea>
+        <p> 
+        </p>
+        <button class="boton" id="input"  onclick=nuevaPalabra() > Agregar Palabra y Jugar</button>
+    </div>
+
+
 
     
     <div class="area">
@@ -29,23 +41,12 @@
 
   
 
-    <div class=" botones">
-        <button class="boton" onclick=iniciarJuego() value="iniciar_juego" id="nuevo_juego" > Nuevo Juego</button>
-       
-    </div>
-
-    <div class="nuevaP" id="nuevaPalabra">
-        <textarea class="newWord" placeholder="ingresar solo letras MAYUSCULAS" cols="30" rows="3"></textarea>
-        <p> 
-        </p>
-        <button class="boton" id="input"  onclick=nuevaPalabra() > Agregar Palabra y Jugar</button>
-    </div>
-
-<div class="botones2">
+    <div class="botones2">
         <button class="boton1" id="btnR" onclick="location.href='index.html'"> Reiniciar</button>
         <button class="boton1" id="btnP"  onclick=pista()> Dame una pista</button>        
 
 </div>
+   
 
 
 

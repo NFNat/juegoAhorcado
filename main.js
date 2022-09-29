@@ -133,19 +133,10 @@ let letrasCorrectasArray = [];
 let found;
 
 
-//import JSConfetti from 'js-confetti'
+
 const jsConfetti = new JSConfetti()
         
 
-
-
-
-function continuarJuego() {
-  if (errores <= 0 ) {
-    alert("Ya perdiste!! Bueno, seguí intentando por el honor ");    
-  }
-
-}
 
 function pista() {
   switch (palabraSecreta) {
@@ -251,23 +242,6 @@ function armarhorca(errores){
 }
 
 function sortearPalabra() {
-// if (estado) {
-//   palabraSecreta=nuevaPalabra;
-
-//   pincel.lineWidth = 4;
-//   pincel.lineCap = "round";
-//   pincel.lineJoin = "round";
-//   pincel.strokeStyle = linea;
-//   let ancho = 600 / palabraSecreta.length;
-//   for (let i = 0; i < palabraSecreta.length; i++) {
-//     pincel.moveTo(px + 20 + ancho * i, py + 400);
-//     pincel.lineTo(px + 70 + ancho * i, py + 400);
-//   }
-//   pincel.stroke();
-//   pincel.closePath();
-//   console.log(palabraSecreta); // borrar esta linea cuando se termine el programa
-// } else {
-  
   let palabra = palabras[Math.floor(Math.random() * palabras.length)];
   palabraSecreta = palabra;
 
@@ -282,10 +256,9 @@ function sortearPalabra() {
   }
   pincel.stroke();
   pincel.closePath();
-  console.log(palabraSecreta); // borrar esta linea cuando se termine el programa
 }
 
-// }
+
 
 
 
@@ -303,7 +276,7 @@ function pushLetraCorrecta(letra){
   if (!letrasCorrectasArray.includes(letra)) {
     letrasCorrectasArray.push(letra); 
   }  
-  console.log("La cantidad de letras correctas son " + letrasCorrectas);//// sacar este log
+ 
   }
 
 function escribirLetraCorrecta(index) {
@@ -316,22 +289,14 @@ function escribirLetraCorrecta(index) {
   let ancho = 600 / palabraSecreta.length;
   pincel.fillText(palabraSecreta[index], px + 25 + ancho * index, py + 380);
   
-
-
   letrasCorrectas = letrasCorrectas +1;
 
-    
-    console.log("Las letras correctas son: "+letrasCorrectasArray);   /// sacar este log
-  
     if (letrasCorrectas === palabraSecreta.length) {
        win()
       jsConfetti.addConfetti() 
       
-    } else {
-      
     } 
-    continuarJuego()
-
+   // continuarJuego()
 }
 
 function escribirLetraIncorrecta(letra, errorLeft) {
@@ -368,16 +333,7 @@ function lose() {
 
 }
 
-function win() {
-  
-  pincel.font = "bold 60px Inter";
-  pincel.lineWidth = 6;
-  pincel.lineCap = "round";
-  pincel.lineJoin = "round";
-  pincel.fillStyle = "#8a2be2";
-  pincel.fillText("Felicitaciones! Ganaste!!!", px+50, py+200);
- 
-}
+
 
 function agregarLetraIncorrecta(key) {
   errores -= 1;
@@ -387,12 +343,10 @@ function agregarLetraIncorrecta(key) {
     if (!letrasIncorrectas.includes(key)) {
       letrasIncorrectas.push(key);
     } else {
-      alert("esa letra ya se agregó");
-      console.log("La cantidad de letras incorrectas es:" +letrasIncorrectas); ///// sacar esto
+      alert("esa letra ya se agregó");      
     }
   } else {
     lose() 
-
   }
 }
 
