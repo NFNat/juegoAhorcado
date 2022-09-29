@@ -62,11 +62,13 @@ button:active {
 
 .boton {
       padding: 1em 5.5em;
+      
 
 }
 
 .boton1 {
       --btn-color: #b417b9;
+      display:none;
 
 }
 
@@ -95,8 +97,9 @@ button:active {
 
 
 .botones {
-      margin-top: -250px;
-      margin-bottom: 80px;
+      margin-top: -600px;
+      /* margin-bottom: 300px; */
+      
 }
 
 .botones2 {
@@ -106,7 +109,10 @@ button:active {
       flex-wrap: wrap;
       justify-content: center;
       align-content: center;
-      align-items: center;
+      /* align-items: baseline; */
+      margin-top: 400px;
+      
+
 }
 
 canvas {
@@ -138,6 +144,15 @@ footer {
       
 }
 
+.nuevaP{
+      color: #b417b9;
+      font-size: 1em;
+      text-align: center;
+      margin-top: 100px;
+}
+.newWord{
+      background-color: aqua;
+}
 .footer-bottom {
       background: #643d88;
       color: #daf2f2;

@@ -132,9 +132,17 @@ let letrasCorrectasArray = [];
 
 let found;
 
+
+//import JSConfetti from 'js-confetti'
+const jsConfetti = new JSConfetti()
+        
+
+
+
+
 function continuarJuego() {
   if (errores <= 0 ) {
-    alert("Ya perdiste!! Bueno, seguí intentando por el honor '&#128540'");    
+    alert("Ya perdiste!! Bueno, seguí intentando por el honor ");    
   }
 
 }
@@ -286,24 +294,17 @@ function comprobarLetra(key) {
   if ((key >= 65 && letras.indexOf(key)) || (key <= 90 && letras.indexOf(key))) {
     //// 65 y 90 corresponde al numero en el indice ASCII de las letras mayusculas
     letras.push(key);
-    
-    //console.log(key);//sacar esto
     return status;
   } else status = true;
-  //console.log(key);
   return status;
 }
 
-
 function pushLetraCorrecta(letra){
   if (!letrasCorrectasArray.includes(letra)) {
-    letrasCorrectasArray.push(letra);    
-  
+    letrasCorrectasArray.push(letra); 
   }  
   console.log("La cantidad de letras correctas son " + letrasCorrectas);//// sacar este log
   }
-
-
 
 function escribirLetraCorrecta(index) {
   pincel.font = "bold 52px Inter";
@@ -323,15 +324,13 @@ function escribirLetraCorrecta(index) {
     console.log("Las letras correctas son: "+letrasCorrectasArray);   /// sacar este log
   
     if (letrasCorrectas === palabraSecreta.length) {
-      alert ("Ganaste");      
+       win()
+      jsConfetti.addConfetti() 
+      
     } else {
       
     } 
     continuarJuego()
-
-
-  
-
 
 }
 
@@ -347,6 +346,39 @@ function escribirLetraIncorrecta(letra, errorLeft) {
 }
 
 
+
+function win() {
+  
+  pincel.font = "bold 60px Inter";
+  pincel.lineWidth = 6;
+  pincel.lineCap = "round";
+  pincel.lineJoin = "round";
+  pincel.fillStyle = "#8a2be2";
+  pincel.fillText("Felicitaciones! Ganaste!!!", px+50, py+200);
+ 
+}
+
+function lose() {
+  pincel.font = "bold 60px Inter";
+  pincel.lineWidth = 6;
+  pincel.lineCap = "round";
+  pincel.lineJoin = "round";
+  pincel.fillStyle = "#8a2be2";
+  pincel.fillText("Lo siento, perdiste", px+100, py+200);
+
+}
+
+function win() {
+  
+  pincel.font = "bold 60px Inter";
+  pincel.lineWidth = 6;
+  pincel.lineCap = "round";
+  pincel.lineJoin = "round";
+  pincel.fillStyle = "#8a2be2";
+  pincel.fillText("Felicitaciones! Ganaste!!!", px+50, py+200);
+ 
+}
+
 function agregarLetraIncorrecta(key) {
   errores -= 1;
   console.log(errores);
@@ -359,7 +391,8 @@ function agregarLetraIncorrecta(key) {
       console.log("La cantidad de letras incorrectas es:" +letrasIncorrectas); ///// sacar esto
     }
   } else {
-    alert("Perdiste");
+    lose() 
+
   }
 }
 
@@ -367,53 +400,50 @@ function agregarLetraIncorrecta(key) {
 
 function iniciarJuego() {
   document.getElementById("nuevo_juego").style.display = "none";
+  document.getElementById("nuevaPalabra").style.display = "none";
+  document.getElementById("btnR").style.display = "inherit";
+  document.getElementById("btnP").style.display = "inherit";
+  
   dibujarTablero();
   sortearPalabra();
   document.onkeydown = (e) => {
     if (errores > 0) {
-    let letra = e.key.toUpperCase();
+      let letra = e.key.toUpperCase();
 
-    if (!letrasCorrectasArray.includes(letra)) {
-
-      if(comprobarLetra(letra) && palabraSecreta.includes(letra)){
-        for (let i = 0; i < palabraSecreta.length; i++) {
-            if (palabraSecreta[i] === letra ) {
-                escribirLetraCorrecta(i); 
-                pushLetraCorrecta(letra);
-
+      if (!letrasCorrectasArray.includes(letra)) {
+        if (comprobarLetra(letra) && palabraSecreta.includes(letra)) {
+          for (let i = 0; i < palabraSecreta.length; i++) {
+            if (palabraSecreta[i] === letra) {
+              escribirLetraCorrecta(i);
+              pushLetraCorrecta(letra);
             }
+          }
+        } else if (!letrasIncorrectas.includes(letra)) {
+          agregarLetraIncorrecta(letra);
+          escribirLetraIncorrecta(letra, errores);
+          armarhorca(errores);
+        } else {
+          alert("Esa letra es incorrecta y ya se usó");
         }
-    }else if(!letrasIncorrectas.includes(letra)){
-        agregarLetraIncorrecta(letra);
-        escribirLetraIncorrecta(letra, errores);
-        armarhorca(errores);
-        }else{
-        alert("Esa letra es incorrecta y ya se usó");
-      }      
-    } else{
-      alert("ya se agrego anteriormente esa letra");
+      } else {
+        alert("ya se agrego anteriormente esa letra");
+      }
     }
-    }  
-    }    
-    }
+  };
+}
 
 
  
+function nuevaPalabra(){
+let nuevaPalabra = document.querySelector(".newWord").value;
+nuevaPalabra = nuevaPalabra.toUpperCase();
+palabras = [];
+palabras.push(nuevaPalabra);
+document.querySelector(".newWord").value="";
+//return palabras;
+iniciarJuego();
 
-/////////// a implementar cuando quede todo funcionando ///////////////
-
-// let estado = false;
-// let nuevaPalabra;
-// let inputValue = document.getElementById("input");
-
-// input.onclick = function getValueInput() {
-//   nuevaPalabra = prompt("Ingresar Palabra");
-//   //inputValue = document.getElementById("insertarPalabra").value;
-//   palabras.push(nuevaPalabra.toUpperCase());
-//   estado = true;
-//   console.log(palabras);
-//   console.log(nuevaPalabra);
-// };
+}
 
 
 ////////Para traer la palabra desde el Json /////////////////////
@@ -443,3 +473,4 @@ function iniciarJuego() {
 //     })
 
 //  }
+

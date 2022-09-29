@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <title>Juego del ahorcado 🕹️ 🧟‍♀️</title>
 
 </head>
@@ -30,25 +31,22 @@
 
     <div class=" botones">
         <button class="boton" onclick=iniciarJuego() value="iniciar_juego" id="nuevo_juego" > Nuevo Juego</button>
-        
+       
+    </div>
+
+    <div class="nuevaP" id="nuevaPalabra">
+        <textarea class="newWord" placeholder="ingresar solo letras MAYUSCULAS" cols="30" rows="3"></textarea>
+        <p> 
+        </p>
+        <button class="boton" id="input"  onclick=nuevaPalabra() > Agregar Palabra y Jugar</button>
     </div>
 
 <div class="botones2">
-        <button class="boton1" onclick="location.href='index.html'"> Reiniciar</button>
-        <button class="boton1" onclick=pista()> Dame una pista</button>
-        <!-- <button class="boton" id="input" onclick=getValueInput() > Agregar Palabra</button> -->
-    
-        
+        <button class="boton1" id="btnR" onclick="location.href='index.html'"> Reiniciar</button>
+        <button class="boton1" id="btnP"  onclick=pista()> Dame una pista</button>        
 
 </div>
 
-
-
-<!-- 
-<div class="botonesInicio">
-    <button class="boton" onclick="location.href='Jugar.html'"> Jugar</button>
-        <button class="boton1" onclick="location.href='agregar.html'"> Agregar Palabra</button>
-</div> -->
 
 
 
@@ -61,5 +59,7 @@
 </footer>
 
     <script src="main.js"></script>
+    
+   
 </body>
 </html>
