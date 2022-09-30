@@ -322,12 +322,14 @@ function pushLetraCorrecta(letra){
   }
 
 function escribirLetraCorrecta(index) {
+  
+
   pincel.font = "bold 52px Inter";
   pincel.lineWidth = 6;
   pincel.lineCap = "round";
   pincel.lineJoin = "round";
   pincel.fillStyle = "#8a2be2";
-
+  
   let ancho = 600 / palabraSecreta.length;
   pincel.fillText(palabraSecreta[index], px + 25 + ancho * index, py + 380);
   
@@ -336,9 +338,11 @@ function escribirLetraCorrecta(index) {
     if (letrasCorrectas === palabraSecreta.length) {
        win()
       jsConfetti.addConfetti() 
-    } 
+    }
   
 }
+  
+
 
 function escribirLetraIncorrecta(letra, errorLeft) {
   
@@ -396,7 +400,7 @@ function iniciarJuego() {
   dibujarTablero();
   sortearPalabra();
   document.onkeydown = (e) => {
-    if (errores > 0) {
+    if (errores > 0 && letrasCorrectas <palabraSecreta.length) {
       let letra = e.key.toUpperCase();
 
       if (!letrasCorrectasArray.includes(letra)) {
